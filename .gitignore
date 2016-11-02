@@ -1,8 +1,1 @@
-*.iml
-.gradle
-.idea
-/local.properties
-/build
-settings.gradle
-projectFilesBackup
-
+# Created by .ignore support plugin (hsz.mobi)
