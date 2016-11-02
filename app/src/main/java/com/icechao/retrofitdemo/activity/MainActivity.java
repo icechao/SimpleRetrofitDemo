@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity implements Callback<ResultBe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        ImageView imageView = (ImageView) findViewById(R.id.text_view);
         getIpInfoDefault();
         getIpInfoPack();
     }
@@ -57,6 +56,11 @@ public class MainActivity extends AppCompatActivity implements Callback<ResultBe
         Call<ResultBean> ipInfo = apiService.getIpInfo("232.176.13.14");
         //执行网络请求
         ipInfo.enqueue(this);
+
+
+
+        //取消网络请求
+        ipInfo.cancel();
     }
 
     /**
@@ -66,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements Callback<ResultBe
         Call<ResultBean> ipInfo = NetProvider.getSerive().getIpInfo("192.168.1.109");
         //异步请求网络
         ipInfo.enqueue(this);
+        ipInfo.cancel();
     }
 
     /**
